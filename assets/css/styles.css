@@ -555,6 +555,7 @@ img {
 .contact__data,
 .contact__form{
   display: grid;
+  place-items: center;
 }
 
 .contact__info{
@@ -910,6 +911,11 @@ img {
     bottom: initial;
     background-color: var(--body-color);
     transition: .4s;
+  }
+
+  .contact__info{
+    display: flex;
+    gap: 150px;
   }
 
   .nav{

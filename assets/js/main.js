@@ -42,39 +42,6 @@ let swiperProjects = new Swiper(".projects__container", {
     }
 });
 
-const contactForm = document.getElementById('contact-form'),
-      contactName = document.getElementById('contact-name'),
-      contactEmail = document.getElementById('contact-email'),
-      contactProject = document.getElementById('contact-project'),
-      contactMessage = document.getElementById('contact-message')
-
-
-const sendEmail = (e) => {
-    e.preventDefault()
-
-    if(contactName.value === '' || contactEmail.value=== '' || contactProject.value=== ''){
-        contactMessage.classList.remove('color-blue')
-        contactMessage.classList.add('color-red')
-
-        contactMessage.textContent = 'Write all the input fields'
-    }else{
-        emailjs.sendForm('service_nxgg0k5','template_fvaceh8','#contact-form', 'quIWWFQwJOgkDasLD')
-            .then(() => {
-                contactMessage.classList.add('color-blue')
-                contactMessage.textContent = 'Message sent✅'
-
-                setTimeout(() => {
-                    contactMessage.textContent = ''
-                }, 5000);
-            }, (error) => {
-                alert('OOPS! Something has failed...', error)
-            })
-        
-            contactName.value = ''
-            contactEmail.value = ''
-            contactProject.value = ''
-    }} 
-contactForm.addEventListener('submit', sendEmail)      
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/ 
 const scrollHeader = () => {

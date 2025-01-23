@@ -336,6 +336,7 @@ img {
 .home__info{
   display: grid;
   row-gap: 2rem;
+  padding-top: 5rem;
 }
 
 .home__info-title{
@@ -361,7 +362,92 @@ img {
   font-weight: var(--font-semi-bold);
 }
 
-/*==================== BUTTONS ====================*/
+/*==================== Work ====================*/
+
+/* Section Styling */
+.work-experience {
+  padding: 4rem 0;
+}
+
+.section__title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--title-color);
+}
+
+.section__subtitle {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+/* Work Container */
+.work__container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.work__card {
+  background: var(--bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Work Content */
+.work__company {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--title-color);
+}
+
+.work__role {
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+.work__duration {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.work__summary {
+  font-size: 1rem;
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Tech Stack */
+.techstack__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--title-color);
+}
+
+.techstack__list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.techstack__list li {
+  font-size: 1rem;
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+}
+
 
 
 /*==================== ABOUT ====================*/
@@ -401,6 +487,12 @@ img {
   justify-content: center;
   text-align: center;
 }
+
+.skills__data:hover {
+  transform: translateY(-10px) scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 
 .skills__blob{
   width: 80px;

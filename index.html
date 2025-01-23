@@ -19,6 +19,11 @@
         <!--==================== CSS ====================-->
         <link rel="stylesheet" href="./assets/css/styles.css">
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
         <title>Sahil's Portfolio Website</title>
     </head>
     <body>
@@ -127,36 +132,16 @@
                                 </p>
                             </div>
 
-                            <div>
-                                <h3 class="home__info-title">
-                                    Known as
-                                </h3>
-
-                                <p class="home__info-description">
-                                    Frontend Developer <br>
-                                    Programmer <br>
-                                </p>
-                            </div>
-
                         </div>
 
                         <div class="home__info">
                             
                             <div>
                                 <h3 class="home__info-title">
-                                    COMPLETED PROJECTS
+                                    PERSONAL PROJECTS
                                 </h3>
                                 
                                 <p class="home__info-number">10+
-                                </p>
-                            </div>
-                            
-                            <div>
-                                <h3 class="home__info-title">
-                                    INTERNSHIP
-                                </h3>
-
-                                <p class="home__info-number">01
                                 </p>
                             </div>
 
@@ -295,7 +280,37 @@
                </div>
             </section>
 
-            
+            <!--==================== WORK EXPERIENCE ====================-->
+            <section class="work-experience section" id="work-experience">
+                <h2 class="section__title">Work Experience</h2>
+                <span class="section__subtitle">Where I've contributed</span>
+              
+                <div class="container work__container">
+                  <!-- Company Card -->
+                  <div class="work__card">
+                    <div class="work__content">
+                      <h3 class="work__company">CraftIndika Private Limited</h3>
+                      <span class="work__role">Software Developer</span>
+                      <p class="work__duration">03/04/24 - 16/04/24</p>
+                      <p class="work__summary">
+                        As a Front-End Developer, I was responsible for creating responsive, user-friendly web applications. 
+                        My contributions included optimizing performance, collaborating with design teams, and delivering intuitive interfaces.
+                      </p>
+                      <div class="work__techstack">
+                        <h4 class="techstack__title">Tech Stack:</h4>
+                        <ul class="techstack__list">
+                          <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                          <li>React.js, Next.js</li>
+                          <li>Tailwind CSS</li>
+                          <li>TypeScript</li>
+                          <li>Git, GitHub</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+                    
             <!--==================== PROJECTS ====================-->
             <section class="project section" id="projects">
                <h2 class="section__title">Projects</h2>
@@ -501,36 +516,6 @@
                             </div>
                         </div>
                     </div>
-                    
-<!--                     <div class="contact__content">
-                        <h3 class="contact__title">Form not working...<br>Some tecnical issues in EmailJS library</h3>
-                        <h3 class="contact__title">
-                            <i class="ri-send-plane-line"></i>Tell me about yourself
-                        </h3>
-                        
-                        <form action="" class="contact__form" id="contact-form">
-                            <div class="contact__form-div">
-                                <label for="" class="contact__form-tag">Name</label>
-                                <input type="text" name="user_name" required placeholder="Write your name" class="contact__form-input" id="contact-name">
-                            </div>
-                            
-                            <div class="contact__form-div">
-                                <label for="" class="contact__form-tag">Email</label>
-                                <input type="text" name="user_email" required placeholder="write your email" class="contact__form-input" id="contact-email">
-                            </div>
-                            
-                            <div class="contact__form-div contact__form-area">
-                                <label for="" class="contact__form-tag">About yourself</label>
-                                <textarea name="user_project" placeholder="About yourself" id="contact-project" class="contact__form-input"></textarea>
-                            </div>
-
-                            <p class="contact__message" id="contact-message"></p>
-
-                            <button type="submit" class="contact__button">
-                                Submit<i class="ri-arrow-right-up-line"></i>
-                            </button>
-                        </form>
-                    </div> -->
                 </div>
             </section>
         </main>
@@ -539,7 +524,7 @@
         <footer class="footer">
             <div class="footer__container container">
                 <h1 class="footer__title">Sahil Panigrahi</h1>
-                <p>Frontend Developer</p>
+                <p class="footer__p">Frontend Developer</p>
 
                 <ul class="footer__list">
                     <li>
@@ -589,5 +574,146 @@
 
         <!--==================== MAIN JS ====================-->
         <script src="./assets/js/main.js"></script>
+
+        <script>
+            // Wait for the DOM to fully load
+            document.addEventListener("DOMContentLoaded", () => {
+              // Animate the title
+              gsap.from(".home__title", {
+                duration: 1.5,
+                opacity: 0,
+                y: -50,
+                ease: "power3.out"
+              });
+          
+              // Animate the profile image
+              gsap.from(".home__perfil img", {
+                duration: 1.5,
+                opacity: 0,
+                scale: 0.5,
+                ease: "back.out(1.7)",
+                delay: 0.5
+              });
+          
+              // Animate social links
+              gsap.from(".home__social-link", {
+                duration: 1,
+                opacity: 0,
+                y: 20,
+                stagger: 0.2, // Stagger animation for each link
+                delay: 1
+              });
+          
+              // Animate info sections
+              gsap.from(".home__info", {
+                duration: 1.5,
+                opacity: 0,
+                y: 50,
+                stagger: 0.3,
+                delay: 1.5
+              });
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                // Register ScrollTrigger plugin            
+              gsap.registerPlugin(ScrollTrigger);
+                // Animate each skill card as it enters the viewport
+                gsap.from(".skills__data", {
+                  scrollTrigger: {
+                    trigger: ".skills__data", // Target each skill card
+                    start: "top 85%", // Trigger animation when the top of the card is in the viewport
+                    toggleActions: "play none none reverse", // Play animation on entering, reverse on leaving
+                  },
+                  opacity: 0, // Start fully transparent
+                  y: 50, // Start from below
+                  duration: 0.8, // Animation duration
+                  stagger: 0.3, // Delay between each skill card animation
+                });
+
+                // Animate the section title and subtitle
+                gsap.from(".section__title, .section__subtitle", {
+                  scrollTrigger: {
+                    trigger: ".skills", // Animate when the skills section enters
+                    start: "top 90%",
+                  },
+                  opacity: 0,
+                  y: -20,
+                  duration: 1,
+                  ease: "power2.out",
+                });
+              });
+
+              document.addEventListener("DOMContentLoaded", () => {
+    // Animate the project cards
+    gsap.from(".projects__content", {
+      scrollTrigger: {
+        trigger: ".projects__container", // Trigger animation when the project container is in view
+        start: "top 85%", // Start animation when top of container reaches 85% of the viewport height
+        toggleActions: "play none none reverse", // Play on enter, reverse on leave
+      },
+      opacity: 0, // Start fully transparent
+      y: 50, // Start from below
+      duration: 0.8, // Duration of animation
+      stagger: 0.2, // Delay between animations for each card
+      ease: "power2.out", // Smooth easing effect
+    });
+  });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Work Card Animation
+    gsap.from(".work__card", {
+      scrollTrigger: {
+        trigger: ".work__card",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+    });
+  });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Contact Data Animation
+    gsap.from(".contact__data", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".contact__data",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    // Contact Button Animation
+    gsap.from(".contact__button", {
+      opacity: 0,
+      x: -50,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: ".contact__button",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.from(".footer__title", { opacity: 0, y: 50, duration: 1, delay: 0.5 });
+    gsap.from(".footer__p", { opacity: 0, y: 50, duration: 1, delay: 0.5 });
+    gsap.from(".footer__list li", { opacity: 0, y: 20, duration: 1, delay: 1, stagger: 0.2 });
+    gsap.from(".footer__social-link", { opacity: 0, y: 20, duration: 1, delay: 1.5, stagger: 0.2 });
+    gsap.from(".footer__copy", { opacity: 0, y: 50, duration: 1, delay: 2 });
+  });
+
+          </script>
     </body>
 </html>

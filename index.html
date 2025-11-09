@@ -150,7 +150,7 @@
                                     COMPANY WORKED
                                 </h3>
 
-                                <p class="home__info-number">01
+                                <p class="home__info-number">02
                                 </p>
                             </div>
                     </div>
@@ -284,6 +284,46 @@
             <section class="work-experience section" id="work-experience">
                 <h2 class="section__title">Work Experience</h2>
                 <span class="section__subtitle">Where I've contributed</span>
+
+                <div class="container work__container">
+                  <!-- Company Card -->
+                  <div class="work__card">
+                    <div class="work__content">
+                      <h3 class="work__company">Novelti Solutions</h3>
+                      <span class="work__role">React Developer</span>
+                      <p class="work__duration">02/06/25 - 04/11/25</p>
+                      <ul class="work__summary">
+  <li>
+    Contributed to building a comprehensive School ERP system that streamlined academic and administrative operations.
+  </li>
+  <li>
+    Developed responsive, user-friendly interfaces using Next.js, TypeScript, and Tailwind CSS, ensuring scalability and smooth user experience across devices.
+  </li>
+  <li>
+    Created reusable components, integrated FastAPI-based RESTful APIs, and optimized performance through lazy loading and efficient state management.
+  </li>
+  <li>
+    Collaborated closely with backend developers, designers, and QA engineers to deliver reliable and maintainable features.
+  </li>
+  <li>
+    Participated regularly in code reviews and followed ESLint and Prettier standards to ensure clean, consistent, and production-ready code.
+  </li>
+</ul>
+
+                      <div class="work__techstack">
+                        <h4 class="techstack__title">Tech Stack:</h4>
+                        <ul class="techstack__list">
+                          <li>React.js</li>
+                          <li>Next.js</li>
+                          <li>Material UI</li>
+                          <li>TypeScript</li>
+                          <li>Git</li>
+                          <li>GitHub</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               
                 <div class="container work__container">
                   <!-- Company Card -->
@@ -292,18 +332,36 @@
                       <h3 class="work__company">CraftIndika Private Limited</h3>
                       <span class="work__role">Software Developer</span>
                       <p class="work__duration">03/04/24 - 16/12/24</p>
-                      <p class="work__summary">
-                        As a Front-End Developer, I was responsible for creating responsive, user-friendly web applications. 
-                        My contributions included optimizing performance, collaborating with design teams, and delivering intuitive interfaces.
-                      </p>
+                      <ul class="work__summary">
+  <li>
+    Worked as a junior front-end developer at a startup, building and enhancing user interfaces using React and Next.js to create dynamic, responsive, and high-performance web applications.
+  </li>
+  <li>
+    Developed new features based on UX/UI designs, maintained and refactored code, and ensured best practices through regular code reviews.
+  </li>
+  <li>
+    Utilized Tailwind CSS for efficient and consistent styling across projects.
+  </li>
+  <li>
+    Managed version control with Git and collaborated closely with backend developers to integrate APIs effectively.
+  </li>
+  <li>
+    Focused on continuous learning and staying updated with modern technologies to contribute effectively in a fast-paced startup environment.
+  </li>
+</ul>
+
                       <div class="work__techstack">
                         <h4 class="techstack__title">Tech Stack:</h4>
                         <ul class="techstack__list">
-                          <li>HTML5, CSS3, JavaScript (ES6+)</li>
-                          <li>React.js, Next.js</li>
+                          <li>HTML5</li>
+                          <li>CSS3</li>
+                          <li>JavaScript (ES6+)</li>
+                          <li>React.js</li>
+                          <li>Next.js</li>
                           <li>Tailwind CSS</li>
                           <li>TypeScript</li>
-                          <li>Git, GitHub</li>
+                          <li>Git</li>
+                          <li>GitHub</li>
                         </ul>
                       </div>
                     </div>
@@ -588,12 +646,14 @@
           
               // Animate the profile image
               gsap.from(".home__perfil img", {
-                duration: 1.5,
-                opacity: 0,
-                scale: 0.5,
-                ease: "back.out(1.7)",
-                delay: 0.5
-              });
+               duration: 1.6,
+               opacity: 0,
+               scale: 0.6,
+               rotation: -15,
+               y: 60,
+               ease: "back.out(1.8)",
+               delay: 0.3,
+             });
           
               // Animate social links
               gsap.from(".home__social-link", {
@@ -717,3 +777,4 @@
           </script>
     </body>
 </html>
+

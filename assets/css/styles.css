@@ -427,6 +427,8 @@ img {
   color: var(--title-color);
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  list-style-type: disc;
+  padding-left: 1.5rem;
 }
 
 /* Tech Stack */
@@ -440,12 +442,26 @@ img {
 .techstack__list {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; 
 }
 
 .techstack__list li {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--title-color);
-  margin-bottom: 0.5rem;
+  border: 1px solid var(--title-color);
+  padding: 6px 14px;
+  border-radius: 10px; 
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.techstack__list li:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
